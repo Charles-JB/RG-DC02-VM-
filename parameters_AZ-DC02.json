@@ -1,0 +1,71 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "canadacentral"
+        },
+        "networkInterfaceName": {
+            "value": "nic-az-dc02-ca"
+        },
+        "networkSecurityGroupName": {
+            "value": "NSG-AZ-DC02-CA"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "Subnet-2"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/87ea5474-dce8-49e7-8890-51ed72e002d3/resourceGroups/AZ-HVnet02-CA/providers/Microsoft.Network/virtualNetworks/AZ-HVnet02"
+        },
+        "publicIpAddressName": {
+            "value": "PIP-AZ-DC03-CA"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "VM-AZ-DC02-CA"
+        },
+        "virtualMachineComputerName": {
+            "value": "VM-AZ-DC02-CA"
+        },
+        "virtualMachineRG": {
+            "value": "RG-AZ-DC02-CA"
+        },
+        "osDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B2s"
+        },
+        "adminUsername": {
+            "value": "moonpie"
+        },
+        "adminPassword": {
+            "value": ""
+        },
+        "patchMode": {
+            "value": "AutomaticByOS"
+        }
+    }
+}
